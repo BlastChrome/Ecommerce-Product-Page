@@ -327,6 +327,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "webpack serve --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
