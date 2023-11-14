@@ -1,15 +1,21 @@
 .header{
     padding: 0;
     border-bottom: #E4E9F2 1px solid;
+
+    &__hamburger{
+        display: none;
+    }
+
     &__wrapper{
         display: flex;
         align-items: center;
     } 
     &__logo{
-
+        cursor: pointer;
     }
 
     &__user{
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -18,7 +24,7 @@
     }
 
     &__cart{
-        
+        cursor: pointer;
         &:hover{
             cursor: pointer; 
             transform: scale(1.1);  
@@ -31,6 +37,7 @@
 
 
     &__profile-box{
+        cursor: pointer;
         overflow: hidden;
         border: 2px solid transparent;
         transition: all 0.3s;
@@ -74,6 +81,7 @@
     }
 
     &__nav-item{
+        cursor: pointer;
         color: #69707D;
         font-size: 15px;
         margin-right: 33px;
@@ -108,5 +116,68 @@
             background: #FF7E1B;
         }
     } 
+}
 
+
+// Mobile styling 
+@media (max-width: 768px) {
+    .header{
+        border-bottom: none;
+        padding: 20px 5px;
+        
+        &__logo{
+            display: flex;
+            align-items: center;
+            position: relative;
+
+        }
+        &__icon{
+            margin-left: 5px;
+        }
+
+        &__hamburger{
+            display: block;
+            cursor: pointer;
+            width: 20px;
+            height: 3px;
+            background-color: #69707D;
+            border: none;
+            outline: none;
+            position: relative; 
+            z-index: 100;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background-color: #69707D;
+                top: -7px; 
+                left: 0;
+                z-index: 100;
+            } 
+            &:after{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background-color: #69707D;
+                top: 7px;
+                left: 0;
+                z-index: 100;
+            }
+        }
+        
+
+        &__nav{
+            display: none;
+        } 
+
+        &__wrapper{
+            justify-content: space-between;
+        }
+
+        &__user{
+            max-width: 85px;
+        }
+    }
 }
