@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# Build output directory
+dist/
+
+# Environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+*.sublime-workspace
+*.sublime-project
+.vscode/
+
+# Log files
+*.log
+
+# Optional: NPM debug logs
+npm-debug.log*
