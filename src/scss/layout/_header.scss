@@ -26,6 +26,23 @@
     max-width: 117px;
     position: relative;
     height: 107px;
+    .svg-wrapper {
+      position: relative;
+      &:after {
+        content: "3";
+        content: "3";
+        color: $white-color;
+        border-radius: $radius-3;
+        text-align: center;
+        font-size: 0.61em;
+        width: 16px;
+        height: 13px;
+        position: absolute;
+        background: $primary-color;
+        bottom: 58%;
+        left: 45%;
+      }
+    }
   }
 
   &__cart {
