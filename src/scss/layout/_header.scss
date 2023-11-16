@@ -12,6 +12,9 @@
     } 
     &__logo{
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 107px;
     }
 
     &__user{
@@ -21,6 +24,8 @@
         justify-content: space-between;
         flex: 1;
         max-width: 117px;
+        position: relative;
+        height: 107px;
     }
 
     &__cart{
@@ -30,7 +35,7 @@
             transform: scale(1.1);  
             transition: all 0.3s;
             path{
-                fill: #FF7E1B;
+                fill: $primary-color;
             }   
         }
     }
@@ -45,7 +50,7 @@
         width: 50px;
         height: 50px;
         &:hover{
-            border: 2px solid #FF7E1B;
+            border: 2px solid $primary-color;
         }
     }
     &__profile{
@@ -67,12 +72,13 @@
         align-items: flex-start;
         flex: 1;
         margin-left: 56.5px;
+        height: 107px;
     }
 
     &__nav-list{
         display: flex;
         list-style: none;
-        height: 107px;
+        // height: 107px;
         align-items: stretch;
         a{
             color: black;
@@ -96,7 +102,7 @@
         } 
         &:hover {
             a{
-                color: #FF7E1B;
+                color: $primary-color;
                 transition: all .3s;
             }
         }
@@ -105,7 +111,7 @@
             display: block;
             width: 100%;
             height: 0px;
-            background: #FF7E1B;
+            background: $primary-color;
             transition: all .3s;
             position: absolute;
             bottom: 0;
@@ -113,7 +119,7 @@
         &:hover:after{
             width: 100%;
             height: 4px;
-            background: #FF7E1B;
+            background: $primary-color;
         }
     } 
 }
@@ -124,49 +130,55 @@
     .header{
         border-bottom: none;
         padding: 20px 5px;
-        
+
         &__logo{
             display: flex;
             align-items: center;
             position: relative;
+            height: auto; 
 
+        } 
+
+        &__user{
+            height: auto;
         }
         &__icon{
-            margin-left: 5px;
+            margin-left: 16px;
         }
 
         &__hamburger{
             display: block;
             cursor: pointer;
-            width: 20px;
-            height: 3px;
+            width: 22px;
+            height: 2px;
             background-color: #69707D;
             border: none;
             outline: none;
             position: relative; 
             z-index: 100;
+
             &:before{
                 content: '';
                 position: absolute;
-                width: 20px;
-                height: 3px;
+                width: 22px;
+                height: 2px;
                 background-color: #69707D;
                 top: -7px; 
                 left: 0;
                 z-index: 100;
             } 
+            
             &:after{
                 content: '';
                 position: absolute;
-                width: 20px;
-                height: 3px;
+                width: 22px;
+                height: 2px;
                 background-color: #69707D;
                 top: 7px;
                 left: 0;
                 z-index: 100;
             }
         }
-        
 
         &__nav{
             display: none;

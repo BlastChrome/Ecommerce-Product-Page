@@ -1,9 +1,10 @@
 @import './base/reset';
-@import './base/typography';
 @import './base/variables';
+@import './base/typography';
 @import './components/button'; 
 @import './components/cards';
 @import './components/modals';
+@import './components/cart';
 @import './layout/header';
 @import './layout/footer';
 @import './layout/grid';
@@ -11,5 +12,5 @@
 @import './layout/navigation';
 
 body {
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: $primary-font;
 }
