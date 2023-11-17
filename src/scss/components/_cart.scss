@@ -4,8 +4,8 @@
   width: 360px;
   height: auto;
   border-radius: 10px;
-  left: 49%;
-  top: 4px;
+  left: 84.4%;
+  top: 7px;
   transform: translate(-62%, 103px);
   display: flex;
   flex-direction: column;
@@ -97,5 +97,21 @@
       font-weight: 700;
       line-height: normal;
     }
+  }
+}
+
+@media (max-width: 991px) {
+  .cart {
+    left: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart {
+    width: 95%;
+    right: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 40%);
   }
 }

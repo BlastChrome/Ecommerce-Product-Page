@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
   }
+
   &__logo {
     cursor: pointer;
     display: flex;
@@ -26,8 +27,10 @@
     max-width: 117px;
     position: relative;
     height: 107px;
+
     .svg-wrapper {
       position: relative;
+
       &:after {
         content: "3";
         content: "3";
@@ -47,10 +50,12 @@
 
   &__cart {
     cursor: pointer;
+
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
       transition: all 0.3s;
+
       path {
         fill: $primary-color;
       }
@@ -65,16 +70,19 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
+
     &:hover {
       border: 2px solid $primary-color;
     }
   }
+
   &__profile {
     width: 100%;
     height: auto;
     transition: all 0.3s;
     border-radius: 50%;
     transform: scale(1);
+
     &:hover {
       transform: scale(1.225);
     }
@@ -95,6 +103,7 @@
     list-style: none;
     height: 107px;
     align-items: stretch;
+
     a {
       color: black;
       text-decoration: none;
@@ -112,15 +121,18 @@
     display: flex;
     align-items: center;
     position: relative;
+
     &:last-child {
       margin-right: 0;
     }
+
     &:hover {
       a {
         color: $primary-color;
         transition: all 0.3s;
       }
     }
+
     &:after {
       content: "";
       display: block;
@@ -131,6 +143,7 @@
       position: absolute;
       bottom: 0;
     }
+
     &:hover:after {
       width: 100%;
       height: 4px;
@@ -155,6 +168,7 @@
     &__user {
       height: auto;
     }
+
     &__icon {
       margin-left: 16px;
     }
