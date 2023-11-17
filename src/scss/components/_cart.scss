@@ -6,7 +6,7 @@
   border-radius: 10px;
   left: 49%;
   top: 4px;
-  transform: translate(-62%, 44%);
+  transform: translate(-62%, 103px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +47,9 @@
     &__row {
       display: flex;
       justify-content: space-between;
+      margin: 0 0 20px;
     }
+
 
     &__text-wrapper {
       display: flex;
