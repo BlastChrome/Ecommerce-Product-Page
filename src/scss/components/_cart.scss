@@ -4,7 +4,7 @@
   width: 360px;
   height: auto;
   border-radius: 10px;
-  left: 84.4%;
+  left: 94.4%;
   top: 7px;
   transform: translate(-62%, 103px);
   display: flex;
@@ -33,7 +33,6 @@
     font-size: 16px;
     font-weight: 700;
     padding: 7px 23px 15px;
-    // border-bottom: 1px solid $quaternary-color;
   }
 
   .cart__item {
@@ -100,7 +99,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1300px) {
   .cart {
     left: 80%;
   }
@@ -112,6 +111,6 @@
     right: 0;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 40%);
+    transform: translate(-50%, 25%);
   }
 }

@@ -9,6 +9,7 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   &__logo {
@@ -213,6 +214,7 @@
 
     &__wrapper {
       justify-content: space-between;
+
     }
 
     &__user {
