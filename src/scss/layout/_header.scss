@@ -1,6 +1,6 @@
 .header {
   padding: 0;
-  border-bottom: #e4e9f2 1px solid;
+  border-bottom: #e4e9f2 2px solid;
 
   &__hamburger {
     display: none;
@@ -32,6 +32,7 @@
     .svg-wrapper {
       position: relative;
 
+
       &:after {
         content: "3";
         content: "3";
@@ -43,8 +44,13 @@
         height: 13px;
         position: absolute;
         background: $primary-color;
-        bottom: 58%;
-        left: 45%;
+        bottom: 66%;
+        left: 65%;
+        transition: $transition;
+      }
+
+      &:hover::after {
+        transform: rotate(360deg);
       }
     }
   }
@@ -55,7 +61,7 @@
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
-      transition: all 0.3s;
+      transition: $transition;
 
       path {
         fill: $primary-color;
@@ -67,7 +73,7 @@
     cursor: pointer;
     overflow: hidden;
     border: 2px solid transparent;
-    transition: all 0.3s;
+    transition: $transition;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -80,7 +86,7 @@
   &__profile {
     width: 100%;
     height: auto;
-    transition: all 0.3s;
+    transition: $transition;
     border-radius: 50%;
     transform: scale(1);
 
@@ -130,7 +136,7 @@
     &:hover {
       a {
         color: $primary-color;
-        transition: all 0.3s;
+        transition: $transition;
       }
     }
 
@@ -140,7 +146,7 @@
       width: 100%;
       height: 0px;
       background: $primary-color;
-      transition: all 0.3s;
+      transition: $transition;
       position: absolute;
       bottom: 0;
     }
