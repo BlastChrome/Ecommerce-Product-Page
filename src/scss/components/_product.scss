@@ -17,7 +17,13 @@
     width: 450px;
 }
 
-
+.featured-product {
+    &__slider--small {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+}
 
 .product-content {
     margin-top: 57px;
