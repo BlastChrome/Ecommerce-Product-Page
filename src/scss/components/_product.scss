@@ -1,0 +1,131 @@
+.product-wrapper {
+    .container {
+        max-width: 1054px;
+    }
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    min-height: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 93px 0;
+}
+
+.product-col {
+    width: 450px;
+}
+
+
+
+.product-content {
+    margin-top: 57px;
+
+    &__subtitle {
+        color: $primary-color;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        color: $black-color;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 48px;
+        margin-bottom: 34px;
+    }
+
+    &__desc {
+        color: $quinary-color;
+        font-size: 16px;
+        margin-bottom: 24px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+}
+
+.price-info {
+    margin-bottom: 40px;
+    max-width: 180px;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    &__price {
+        color: $black-color;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__discount {
+        color: $primary-color;
+        font-size: 16px;
+        font-weight: 700;
+        background: $secondary-color;
+        padding: 5px 10px;
+        border-radius: $radius-4;
+
+    }
+
+    &__old-price {
+        color: $tertiary-color;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26px;
+        text-decoration-line: line-through;
+        // margin-bottom: 58px
+    }
+}
+
+.checkout-row {
+    display: flex;
+}
+
+.checkout-col {
+    display: flex;
+}
+
+
+
+.quantity-controller {
+    flex-grow: 0;
+    background-color: $bg-color-1;
+    border-radius: $radius-4;
+    margin: 0 20px 0 0;
+    max-width: 158px;
+
+    // input of type number 
+    input[type=number] {
+        width: 100%;
+        background: $bg-color-1;
+        border: none;
+        color: $black-color;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .button {
+        color: $primary-color;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.add-to-cart-wrapper {
+    flex-grow: 2;
+
+    .button {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 20px 0px;
+    }
+}
