@@ -6,16 +6,21 @@ export default class MobileNav {
 
   cacheDom = () => {
     this.hamburger = document.getElementById("hamburger");
+    this.nav = document.getElementById("nav");
   };
 
   initEvents = () => {
     this.hamburger.addEventListener("click", this.handleHamburgerClick);
   };
 
+  toggleActive = (element) => {
+    element.classList.contains("active")
+      ? element.classList.remove("active")
+      : element.classList.add("active");
+  };
+
   handleHamburgerClick = (e) => {
-    const clickedElement = e.target;
-    clickedElement.classList.contains("active")
-      ? clickedElement.classList.remove("active")
-      : clickedElement.classList.add("active");
+    this.toggleActive(this.hamburger);
+    this.toggleActive(this.nav);
   };
 }

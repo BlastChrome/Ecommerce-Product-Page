@@ -232,7 +232,37 @@
     }
 
     &__nav {
-      display: none;
+      position: fixed;
+      background: #fff;
+      height: 100%;
+      width: 250px;
+      margin: 0;
+      top: 0;
+      left: -250px;
+      display: flex;
+      justify-content: flex-start;
+      padding: 90px 0 0 25px;
+
+      &.active {
+        left: 0;
+        transition: left 0.3s ease;
+      }
+    }
+
+    &__nav-list {
+      display: flex;
+      list-style: none;
+      height: auto;
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    &__nav-item {
+      margin: 0;
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     &__wrapper {
