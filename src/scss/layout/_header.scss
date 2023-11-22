@@ -190,6 +190,7 @@
       outline: none;
       position: relative;
       z-index: 100;
+      transition: background-color 0.3s ease;
 
       &:before {
         content: "";
@@ -200,6 +201,7 @@
         top: -7px;
         left: 0;
         z-index: 100;
+        transition: transform 0.3s ease;
       }
 
       &:after {
@@ -211,6 +213,21 @@
         top: 7px;
         left: 0;
         z-index: 100;
+        transition: transform 0.3s ease;
+      }
+
+      &.active {
+        background-color: transparent;
+
+        &:before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
       }
     }
 
