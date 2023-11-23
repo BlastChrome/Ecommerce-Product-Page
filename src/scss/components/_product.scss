@@ -18,13 +18,25 @@
 }
 
 .featured-product {
+    &__slider {
+        overflow: hidden;
+    }
+
     &__slider--small {
         display: flex;
         justify-content: space-between;
         margin-top: 24px;
     }
 
-    &__slider--big {}
+    &__slider--big {
+        display: flex;
+        max-width: 445px;
+
+        img {
+            width: 100%;
+            float: left;
+        }
+    }
 
     &__slider--mobile {
         display: none;
