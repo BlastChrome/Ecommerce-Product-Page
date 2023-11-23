@@ -14,9 +14,11 @@ export default class MobileNav {
   };
 
   toggleActive = (element) => {
-    element.classList.contains("active")
-      ? element.classList.remove("active")
-      : element.classList.add("active");
+    element.classList.toggle("active");
+  };
+
+  removeActive = (element) => {
+    element.classList.remove("active");
   };
 
   handleHamburgerClick = (e) => {

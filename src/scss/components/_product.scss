@@ -10,7 +10,7 @@
     min-height: 0;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 93px 0;
+    padding: 93px 0 60px;
 }
 
 .product-col {
@@ -205,6 +205,7 @@
     .price-info {
         margin-bottom: 0;
         display: flex;
+        flex-wrap: wrap;
         max-width: none;
         width: 100%;
         justify-content: space-between;
