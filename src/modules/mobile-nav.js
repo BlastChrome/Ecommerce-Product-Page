@@ -7,6 +7,7 @@ export default class MobileNav {
   cacheDom = () => {
     this.hamburger = document.getElementById("hamburger");
     this.nav = document.getElementById("nav");
+    this.overlay = document.getElementById("overlay");
   };
 
   initEvents = () => {
@@ -24,5 +25,6 @@ export default class MobileNav {
   handleHamburgerClick = (e) => {
     this.toggleActive(this.hamburger);
     this.toggleActive(this.nav);
+    this.toggleActive(this.overlay);
   };
 }
