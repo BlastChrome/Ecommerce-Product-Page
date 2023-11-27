@@ -30,7 +30,6 @@ export default class ActiveManager {
         this.removeActive(item);
       }
     });
-    console.log(this.activeElements);
   };
 
   addToActive = (item) => {
