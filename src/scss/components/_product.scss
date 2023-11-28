@@ -141,6 +141,16 @@
         color: $primary-color;
         background: transparent;
         padding: 0;
+
+        &:hover {
+            background-color: darken($bg-color-1, 10%);
+        }
+
+        &:active {
+            background: transparent;
+            box-shadow: 0 1px #dcdcdc;
+            transform: none;
+        }
     }
 }
 

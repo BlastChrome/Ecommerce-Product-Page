@@ -1,4 +1,4 @@
-export default class ActiveManager {
+export default class UIManager {
   constructor() {
     this.cacheDom();
     this.initEvents();

@@ -1,6 +1,6 @@
 import "./scss/main.scss";
-import ActiveManager from "./modules/active-manager";
+import UIManager from "./modules/ui-manager";
 import Slider from "./modules/slider";
 const App = (() => {
-  const active_manager = new ActiveManager();
+  const ui_manager = new UIManager();
 })();
