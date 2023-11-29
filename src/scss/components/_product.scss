@@ -11,13 +11,53 @@
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 93px 0 60px;
+
+    &--full-row {
+        padding: 0;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        margin-top: 81px;
+        z-index: 999;
+        display: none;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            transition: all 0.3s ease-in-out;
+            display: block;
+            position: absolute;
+            width: 550px;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, 0%);
+            margin-top: 80px;
+        }
+    }
 }
 
 .product-col {
     width: 450px;
+
+    &--full-col {
+        width: 550px;
+
+        .close-slider {
+            margin-bottom: 20px;
+            float: right;
+            background: transparent;
+            border: none;
+            margin-top: 11px;
+        }
+    }
 }
 
 .featured-product {
+    position: relative;
+
+
+
     &__slider {
         overflow: hidden;
     }
@@ -26,6 +66,8 @@
         display: flex;
         justify-content: space-between;
         margin-top: 24px;
+        max-width: 447px;
+        margin: 39px auto 0;
     }
 
     &__slider--big {
@@ -38,10 +80,18 @@
         }
     }
 
+    &__slider--full {
+        display: flex;
+        max-width: none;
+        width: 100%;
+    }
+
     &__slider--mobile {
         display: none;
     }
+
 }
+
 
 .product-content {
     margin-top: 57px;
@@ -117,8 +167,6 @@
     display: flex;
 }
 
-
-
 .quantity-controller {
     flex-grow: 0;
     background-color: $bg-color-1;
@@ -151,6 +199,20 @@
             box-shadow: 0 1px #dcdcdc;
             transform: none;
         }
+    }
+}
+
+.slider__controller {
+    position: absolute;
+    top: 0;
+    margin-top: 290px;
+
+    &--prev {
+        right: 522px;
+    }
+
+    &--next {
+        left: 522px;
     }
 }
 
@@ -187,6 +249,7 @@
     }
 
     .featured-product {
+
         &__slider--small {
             display: none;
         }
@@ -202,6 +265,7 @@
 
             display: block;
         }
+
     }
 
     .product-content {

@@ -9,11 +9,22 @@ export default class UIManager {
     this.hamburger = document.getElementById("hamburger");
     this.nav = document.getElementById("nav");
     this.overlay = document.getElementById("overlay");
+    this.slider_wrapper = document.getElementById("slider-wrapper");
+    this.featured_product_trigger = document.getElementById(
+      "featured-product--trigger"
+    );
+    this.featured_product_wrapper = document.getElementById(
+      "featured-product-wrapper"
+    );
   };
 
   initEvents = () => {
     this.hamburger.addEventListener("click", this.handleHamburgerClick);
     this.overlay.addEventListener("click", this.handleOverlayClick);
+    this.featured_product_trigger.addEventListener(
+      "click",
+      this.handleFeaturedClick
+    );
   };
 
   toggle = (elements) => {
@@ -52,5 +63,11 @@ export default class UIManager {
         this.removeActive(item);
       });
     }
+  };
+
+  handleFeaturedClick = (e) => {
+    e.stopPropagation();
+    console.log(this.featured_product_wrapper);
+    this.toggle([this.featured_product_wrapper, this.overlay]);
   };
 }
