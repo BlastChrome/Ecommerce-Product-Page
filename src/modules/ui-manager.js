@@ -2,6 +2,7 @@ export default class UIManager {
   constructor() {
     this.cacheDom();
     this.initEvents();
+    this.handleResize(); // Call this initially to set up the correct state
     this.activeElements = [];
   }
 
@@ -26,17 +27,14 @@ export default class UIManager {
       "click",
       this.handleSliderCloseClick
     );
-    this.featured_product_trigger.addEventListener(
-      "click",
-      this.handleFeaturedClick
-    );
+
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
   };
 
   toggle = (elements) => {
-    //toggle the active state of the passed in elements
     elements.forEach((item) => {
       item.classList.toggle("active");
-      //if those elements have been toggled to 'active' add them to the list of currently active elements
       if (
         item.classList.contains("active") &&
         !this.activeElements.includes(item)
@@ -54,6 +52,23 @@ export default class UIManager {
 
   removeActive = (element) => {
     this.activeElements = this.activeElements.filter((item) => item != element);
+  };
+
+  handleResize = () => {
+    const mediaQuery = window.matchMedia("(max-width: 460px)");
+    if (mediaQuery.matches) {
+      // If screen size is 460px or lower, remove the event listener
+      this.featured_product_trigger.removeEventListener(
+        "click",
+        this.handleFeaturedClick
+      );
+    } else {
+      // Otherwise, add the event listener
+      this.featured_product_trigger.addEventListener(
+        "click",
+        this.handleFeaturedClick
+      );
+    }
   };
 
   handleHamburgerClick = (e) => {
