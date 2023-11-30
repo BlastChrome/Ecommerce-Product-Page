@@ -10,6 +10,7 @@ export default class UIManager {
     this.nav = document.getElementById("nav");
     this.overlay = document.getElementById("overlay");
     this.slider_wrapper = document.getElementById("slider-wrapper");
+    this.close_slider_btn = document.getElementById("close-slider");
     this.featured_product_trigger = document.getElementById(
       "featured-product--trigger"
     );
@@ -21,6 +22,10 @@ export default class UIManager {
   initEvents = () => {
     this.hamburger.addEventListener("click", this.handleHamburgerClick);
     this.overlay.addEventListener("click", this.handleOverlayClick);
+    this.close_slider_btn.addEventListener(
+      "click",
+      this.handleSliderCloseClick
+    );
     this.featured_product_trigger.addEventListener(
       "click",
       this.handleFeaturedClick
@@ -56,6 +61,13 @@ export default class UIManager {
     this.toggle([this.hamburger, this.nav, this.overlay]);
   };
 
+  handleSliderCloseClick = (e) => {
+    this.activeElements.forEach((item) => {
+      item.classList.remove("active");
+      this.removeActive(item);
+    });
+  };
+
   handleOverlayClick = (e) => {
     if (e.target == this.overlay && this.overlay.classList.contains("active")) {
       this.activeElements.forEach((item) => {
@@ -67,7 +79,6 @@ export default class UIManager {
 
   handleFeaturedClick = (e) => {
     e.stopPropagation();
-    console.log(this.featured_product_wrapper);
     this.toggle([this.featured_product_wrapper, this.overlay]);
   };
 }

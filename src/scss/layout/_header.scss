@@ -189,7 +189,7 @@
       border: none;
       outline: none;
       position: relative;
-      z-index: 100;
+
       transition: background-color 0.3s ease;
 
       &:before {
@@ -200,7 +200,7 @@
         background-color: #69707d;
         top: -7px;
         left: 0;
-        z-index: 100;
+        // z-index: 100;
         transition: transform 0.3s ease;
       }
 
@@ -212,21 +212,24 @@
         background-color: #69707d;
         top: 7px;
         left: 0;
-        z-index: 100;
+        // z-index: 100;
         transition: transform 0.3s ease;
       }
 
       &.active {
         background-color: transparent;
+        z-index: 100;
 
         &:before {
           transform: rotate(45deg);
           top: 0;
+          z-index: 100;
         }
 
         &:after {
           transform: rotate(-45deg);
           top: 0;
+          z-index: 100;
         }
       }
     }

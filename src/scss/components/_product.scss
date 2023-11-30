@@ -49,6 +49,14 @@
             background: transparent;
             border: none;
             margin-top: 11px;
+            position: relative;
+            z-index: 999;
+            cursor: pointer;
+
+            &:hover svg path {
+                fill: $primary-color;
+            }
+
         }
     }
 }
@@ -206,6 +214,9 @@
     position: absolute;
     top: 0;
     margin-top: 290px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 
     &--prev {
         right: 522px;
@@ -229,6 +240,47 @@
 @media (max-width: 959px) {
     .product-row {
         justify-content: center;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .slider__controller {
+        &--prev {
+            right: 490px;
+        }
+
+        &--next {
+            left: 490px;
+        }
+    }
+
+}
+
+
+@media (max-width: 550px) {
+    .product-col {
+        width: 450px;
+
+        &--full-col {
+            width: 100%;
+            padding: 0;
+            max-width: 370px;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    .slider__controller {
+        margin-top: 55%;
+
+        &--prev {
+            right: 350px;
+        }
+
+        &--next {
+            left: 350px;
+        }
     }
 }
 
