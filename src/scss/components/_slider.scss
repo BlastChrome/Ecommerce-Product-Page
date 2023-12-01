@@ -1,0 +1,152 @@
+.product-col {
+    &--full-col {
+        .close-slider {
+            margin-bottom: 20px;
+            float: right;
+            background: transparent;
+            border: none;
+            margin-top: 11px;
+            position: relative;
+            z-index: 999;
+            cursor: pointer;
+
+            &:hover svg path {
+                fill: $primary-color;
+            }
+
+        }
+    }
+}
+
+.featured-product {
+    &__slider {
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__slider--small {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        max-width: 447px;
+        margin: 39px auto 0;
+    }
+
+    &__slider--big {
+        display: flex;
+        max-width: 445px;
+        min-height: 445px;
+
+        .slide {
+            position: absolute;
+            transition: all .25s;
+            // transform: translateX(-200%);
+
+            &--prev {
+                // z-index: 10;
+                transform: translateX(-100%);
+            }
+
+            &--current {
+                // z-index: 10;
+                transform: translateX(0);
+            }
+
+            &--next {
+                // z-index: 10;
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    &__slider--full {
+        display: flex;
+        max-width: none;
+        width: 100%;
+    }
+
+    &__slider--mobile {
+        display: none;
+    }
+}
+
+.slider__controller {
+    position: absolute;
+    top: 0;
+    margin-top: 290px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &--prev {
+        right: 522px;
+    }
+
+    &--next {
+        left: 522px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .slider__controller {
+        &--prev {
+            right: 490px;
+        }
+
+        &--next {
+            left: 490px;
+        }
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .slider__controller {
+        margin-top: 55%;
+
+        &--prev {
+            right: 350px;
+        }
+
+        &--next {
+            left: 350px;
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .slider__controller {
+        margin-top: 40%;
+
+        &--prev-mb {
+            right: 380px;
+        }
+
+        &--next-mb {
+            left: 380px;
+        }
+    }
+
+    .featured-product {
+
+        &__slider--small {
+            display: none;
+        }
+
+        &__slider--big {
+            display: none;
+        }
+
+        &__slider--mobile {
+            img {
+                width: 100%;
+            }
+
+            display: block;
+        }
+
+    }
+}

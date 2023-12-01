@@ -42,62 +42,11 @@
 
     &--full-col {
         width: 550px;
-
-        .close-slider {
-            margin-bottom: 20px;
-            float: right;
-            background: transparent;
-            border: none;
-            margin-top: 11px;
-            position: relative;
-            z-index: 999;
-            cursor: pointer;
-
-            &:hover svg path {
-                fill: $primary-color;
-            }
-
-        }
     }
 }
 
 .featured-product {
     position: relative;
-
-
-
-    &__slider {
-        overflow: hidden;
-    }
-
-    &__slider--small {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 24px;
-        max-width: 447px;
-        margin: 39px auto 0;
-    }
-
-    &__slider--big {
-        display: flex;
-        max-width: 445px;
-
-        img {
-            width: 100%;
-            float: left;
-        }
-    }
-
-    &__slider--full {
-        display: flex;
-        max-width: none;
-        width: 100%;
-    }
-
-    &__slider--mobile {
-        display: none;
-    }
-
 }
 
 
@@ -210,23 +159,6 @@
     }
 }
 
-.slider__controller {
-    position: absolute;
-    top: 0;
-    margin-top: 290px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    &--prev {
-        right: 522px;
-    }
-
-    &--next {
-        left: 522px;
-    }
-}
-
 .add-to-cart-wrapper {
     flex-grow: 2;
 
@@ -244,19 +176,6 @@
 }
 
 
-@media (max-width: 767px) {
-    .slider__controller {
-        &--prev {
-            right: 490px;
-        }
-
-        &--next {
-            left: 490px;
-        }
-    }
-
-}
-
 
 @media (max-width: 550px) {
     .product-col {
@@ -270,22 +189,9 @@
             padding: 0;
         }
     }
-
-    .slider__controller {
-        margin-top: 55%;
-
-        &--prev {
-            right: 350px;
-        }
-
-        &--next {
-            left: 350px;
-        }
-    }
 }
 
 @media (max-width: 460px) {
-
     .product-wrapper {
         .container {
             padding: 0;
@@ -298,26 +204,6 @@
 
     .product-col:nth-child(2) {
         padding: 0 23px;
-    }
-
-    .featured-product {
-
-        &__slider--small {
-            display: none;
-        }
-
-        &__slider--big {
-            display: none;
-        }
-
-        &__slider--mobile {
-            img {
-                width: 100%;
-            }
-
-            display: block;
-        }
-
     }
 
     .product-content {
