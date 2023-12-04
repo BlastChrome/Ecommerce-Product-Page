@@ -21,8 +21,8 @@
 .sliderTrack {
     position: relative;
     overflow: hidden;
-    min-height: 445px;
-    min-width: 445px;
+    // min-height: 445px;
+    // min-width: 445px;
 }
 
 .slide {
@@ -63,8 +63,6 @@
 
     &__slider--big {
         display: flex;
-        min-height: 445px;
-        min-width: 445px;
     }
 
     &__slider--full {

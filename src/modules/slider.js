@@ -20,8 +20,12 @@ export default class Slider {
     this.cacheDom(element);
     if (this.slides.length > 0) {
       this.slideTrack = this.createTrack();
+
       this.slider.appendChild(this.slideTrack);
       this.initializeSlidePositions();
+      this.updateSlideSize();
+
+      //slider is set to autoplay by default
       this.autoPlay(2000);
       // set the initial current, next, and previous state for the slides
     } else {
@@ -38,12 +42,6 @@ export default class Slider {
       return;
     }
     this.slides = this.getSlides();
-  };
-
-  initEventListeners = () => {
-    this.testButton.addEventListener("click", () => {
-      this.slideToNext();
-    });
   };
 
   // Method to create a track for the slides
@@ -68,6 +66,12 @@ export default class Slider {
   getSlides = () => {
     // Return an empty array if this.slider is not valid
     return this.slider ? Array.from(this.slider.children) : [];
+  };
+
+  updateSlideSize = () => {
+    this.slideTrack.style.height = this.slides[0].offsetHeight + "px";
+    this.slideTrack.style.width = this.slides[0].offsetWidth + "px";
+    console.log([this.slides[0].offsetHeight, this.slides[0].offsetWidth]);
   };
 
   initializeSlidePositions = () => {
@@ -98,6 +102,7 @@ export default class Slider {
   };
 
   slideToDirection = (dir) => {
+    this.updateSlideSize();
     let curr = this.slides[this.currIndex];
     let next = this.slides[this.nextIndex];
     let prev = this.slides[this.prevIndex];
@@ -105,18 +110,17 @@ export default class Slider {
 
     // if the direction is (+), then move the slide to the right
     if (dir >= 0) {
-      // if the next slide is the last slide then....
+      // if the next slide is the last slide then the curr
       if (this.nextIndex == this.slides.length - 1) {
-        next.classList.remove("slide--next");
-        next.classList.add("slide--curr");
-        curr.classList.remove("slide--curr");
-        curr.classList.add("slide--prev");
-        prev.classList.remove("slide--prev");
+        this.updateClass(next, "slide--next", "slide--curr");
+        this.updateClass(curr, "slide--curr", "slide--prev");
+        this.updateClass(prev, "slide--prev", null);
 
         curr = this.slides[this.nextIndex];
         next = this.slides[0]; // go back to the first slide;
         prev = this.slides[this.currIndex];
-        next.classList.add("slide--next");
+
+        this.updateClass(next, null, "slide--next");
 
         this.prevIndex = this.currIndex;
         this.currIndex = this.nextIndex;
@@ -124,16 +128,23 @@ export default class Slider {
         return;
       }
 
-      next.classList.remove("slide--next");
-      next.classList.add("slide--curr");
-      curr.classList.remove("slide--curr");
-      curr.classList.add("slide--prev");
-      prev.classList.remove("slide--prev");
-      afterNext.classList.add("slide--next");
+      this.updateClass(next, "slide--next", "slide--curr");
+      this.updateClass(curr, "slide--curr", "slide--prev");
+      this.updateClass(prev, "slide--prev", null);
+      this.updateClass(afterNext, null, "slide--next");
 
       this.prevIndex = this.currIndex;
       this.currIndex = this.nextIndex;
       this.nextIndex = (this.nextIndex + 1) % this.slides.length;
+    }
+  };
+
+  updateClass = (element, removeClass, addClass) => {
+    if (element) {
+      if (addClass != null || removeClass != null) {
+        element.classList.remove(removeClass);
+        element.classList.add(addClass);
+      }
     }
   };
 }
